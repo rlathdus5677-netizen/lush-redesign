@@ -65,6 +65,7 @@ const productDialog = document.querySelector('#product-dialog');
 const accountDialog = document.querySelector('#account-dialog');
 const brandDialog = document.querySelector('#brand-dialog');
 const catalogDialog = document.querySelector('#catalog-dialog');
+const disclaimerDialog = document.querySelector('#disclaimer-dialog');
 const dialogTriggers = new WeakMap();
 function openDialog(dialog, trigger) {
   for (const current of document.querySelectorAll('dialog[open]')) current.close();
@@ -88,7 +89,6 @@ for (const dialog of document.querySelectorAll('dialog')) {
     }
   });
 }
-const disclaimerDialog = document.querySelector('#disclaimer-dialog');
 const disclaimerStorageKey = 'lush-redesign-disclaimer-accepted';
 let disclaimerAccepted = false;
 try { disclaimerAccepted = localStorage.getItem(disclaimerStorageKey) === 'true'; } catch { /* Keep this visit usable when browser storage is unavailable. */ }
