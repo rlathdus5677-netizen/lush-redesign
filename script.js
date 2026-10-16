@@ -72,9 +72,9 @@ function openDialog(dialog, trigger) {
   dialog.showModal();
 }
 for (const dialog of document.querySelectorAll('dialog')) {
-  dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
+  dialog.querySelector('.dialog-close')?.addEventListener('click', () => dialog.close());
   dialog.addEventListener('keydown', event => {
-    if (event.key === 'Escape') { event.preventDefault(); dialog.close(); }
+    if (event.key === 'Escape') { event.preventDefault(); if (dialog !== disclaimerDialog) dialog.close(); }
   }, true);
   dialog.addEventListener('click', event => {
     if (event.target !== dialog) return;
@@ -88,6 +88,16 @@ for (const dialog of document.querySelectorAll('dialog')) {
     }
   });
 }
+const disclaimerDialog = document.querySelector('#disclaimer-dialog');
+const disclaimerStorageKey = 'lush-redesign-disclaimer-accepted';
+let disclaimerAccepted = false;
+try { disclaimerAccepted = localStorage.getItem(disclaimerStorageKey) === 'true'; } catch { /* Keep this visit usable when browser storage is unavailable. */ }
+if (!disclaimerAccepted) disclaimerDialog.showModal();
+disclaimerDialog.addEventListener('cancel', event => event.preventDefault());
+document.querySelector('#disclaimer-continue').addEventListener('click', () => {
+  try { localStorage.setItem(disclaimerStorageKey, 'true'); } catch { /* The current visit can still proceed. */ }
+  disclaimerDialog.close();
+});
 
 // Hero arrows reuse the page's real campaign imagery and existing editorial copy.
 const heroSlides = [

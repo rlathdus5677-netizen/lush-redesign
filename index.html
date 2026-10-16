@@ -87,5 +87,16 @@
   <dialog id="catalog-dialog" class="utility-dialog catalog-dialog" aria-labelledby="catalog-title"><div class="dialog-heading"><div><p class="eyebrow catalog-eyebrow">LUSH COLLECTION</p><h2 id="catalog-title">컬렉션</h2></div><button class="icon-button dialog-close" aria-label="컬렉션 닫기">×</button></div><p id="catalog-description" class="detail-description"></p><div id="catalog-filters" class="catalog-filters" role="group" aria-label="상품 카테고리"></div><div id="catalog-products" class="catalog-products" aria-live="polite"></div><p id="catalog-empty" class="catalog-empty" hidden>이 카테고리에 준비된 상품이 없습니다. 다른 카테고리도 둘러보세요.</p></dialog>
   <dialog id="account-dialog" class="utility-dialog" aria-labelledby="account-title"><div class="dialog-heading"><h2 id="account-title">로그인</h2><button class="icon-button dialog-close" aria-label="계정 창 닫기">×</button></div><div class="account-tabs" role="group" aria-label="계정 화면 선택"><button type="button" data-account-mode="login" aria-pressed="true">로그인</button><button type="button" data-account-mode="signup" aria-pressed="false">회원가입</button></div><p class="prototype-note">포트폴리오용 체험 화면입니다. 실제 개인정보 대신 예시 정보를 입력해주세요. 입력 정보는 전송하거나 저장하지 않습니다.</p><form id="account-form"><div id="account-name-field" hidden><label for="account-name">이름</label><input id="account-name" autocomplete="off" placeholder="예: 러쉬"></div><label for="account-email">이메일</label><input id="account-email" type="email" required autocomplete="off" placeholder="demo@example.com"><label for="account-password">비밀번호</label><input id="account-password" type="password" required minlength="6" autocomplete="off" placeholder="체험용 6자 이상"><button type="submit" class="pill" id="account-submit">로그인 체험</button><p id="account-status" class="search-status" role="status"></p></form></dialog>
   <dialog id="brand-dialog" class="utility-dialog" aria-labelledby="brand-dialog-title"><div class="dialog-heading"><h2 id="brand-dialog-title">자연에서 시작되는 러쉬</h2><button class="icon-button dialog-close" aria-label="브랜드 소개 닫기">×</button></div><p class="detail-description">신선한 자연 원료와 손으로 만드는 제품, 동물실험 반대와 더 나은 지구를 위한 약속. 자연의 생생한 에너지를 일상의 케어에 담았습니다.</p><p class="prototype-note">이 페이지는 LUSH 웹사이트 리디자인 포트폴리오 프로토타입입니다.</p></dialog>
+  <dialog id="disclaimer-dialog" class="disclaimer-dialog" aria-labelledby="disclaimer-title" aria-describedby="disclaimer-copy">
+    <div class="disclaimer-content">
+      <p class="eyebrow">PORTFOLIO PROJECT</p>
+      <h2 id="disclaimer-title">LUSH Website Redesign</h2>
+      <div id="disclaimer-copy" class="disclaimer-copy">
+        <p>본 사이트는 디자인 학습 및 포트폴리오를 목적으로 제작한<br class="disclaimer-break"> <strong>비공식 LUSH 웹사이트 리디자인 프로젝트</strong>입니다.</p>
+        <p>LUSH 공식 웹사이트가 아니며, 실제 상품 구매 및 서비스는 제공하지 않습니다.<br class="disclaimer-break">LUSH의 상표, 제품명 및 사용된 브랜드 이미지는 각 권리자에게 귀속됩니다.</p>
+      </div>
+      <button class="pill disclaimer-continue" id="disclaimer-continue" type="button">프로젝트 둘러보기 <svg><use href="#i-arrow"/></svg></button>
+    </div>
+  </dialog>
 </body>
 </html>
