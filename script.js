@@ -89,13 +89,9 @@ for (const dialog of document.querySelectorAll('dialog')) {
     }
   });
 }
-const disclaimerStorageKey = 'lush-redesign-disclaimer-accepted';
-let disclaimerAccepted = false;
-try { disclaimerAccepted = localStorage.getItem(disclaimerStorageKey) === 'true'; } catch { /* Keep this visit usable when browser storage is unavailable. */ }
-if (!disclaimerAccepted) disclaimerDialog.showModal();
+disclaimerDialog.showModal();
 disclaimerDialog.addEventListener('cancel', event => event.preventDefault());
 document.querySelector('#disclaimer-continue').addEventListener('click', () => {
-  try { localStorage.setItem(disclaimerStorageKey, 'true'); } catch { /* The current visit can still proceed. */ }
   disclaimerDialog.close();
 });
 
